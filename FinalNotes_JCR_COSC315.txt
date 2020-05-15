@@ -1,0 +1,147 @@
+Final Notes:
+
+Controls:
+WASD work to move the player around
+Space is jump
+
+if you hold down LeftShift,
+WASD move Abuela around, she flies
+if you press left trigger, she shoots a boomerang type weapon(her chankleta)
+
+if you press M, you will toggle the location, save, load, and inventory menu
+
+Interactions:
+On hitting a projectile, Health meter will decrease
+On hitting a Needle, Health and Hygiene will decrease
+On hitting a KarmaCube, Karma will be raised to full
+
+On hitting DormKey, your dormKey count will go up by one and show up in the inventory panel
+On hitting Soap, your Soap count will go up by one and show up in the inventory panel
+
+Future Updates:
+-Create a max range for Abuela from Player
+-Make a Button that is triggered by a certain class of item that allows you to use it, increasing XBars
+-Limit the number of Abuela's projectiles
+-On Full Meters, Abuela should be given a super attack
+-Make Abuela non-collidable
+
+-Scene Setups
+
+-Boss phases and classroom scene
+
+History:
+
+Update_002
+tutorial 3 completed: https://www.youtube.com/watch?v=p5OWasgD1no
+(still have to tweek jump, but float values are there for much more than before)
+
+tutorial 4: https://www.youtube.com/watch?v=IeuqDVKfJag
+(Jump is fixed)
+(---stuck @ 12:43min marker, Unity error: error message = Transform' does not contain a definition for 'Lookat' and no accessible extension method
+'Lookat' accepting a first argument of type 'Transform' could be found (are you missing a using directive or an assembly reference?)
+
+Update_003
+I started a code to move abuela around, she moves and floats. I need to create a function that switches between characters & controllers when "Shift" is being held down.
+
+Update_004
+Controllers have a new error: deltatime is not defined, I dont understand where that came from
+changes: I made if statements in both controllers, for holdshift and !holdshift, they worked.
+created classes for Hygiene and Karma
+future tweaks: The players continue to move after their conditions of shift are no longer met, they have to come to a full stop after .5 seconds or so.
+
+Update_005
+Fixed Time.deltaTime error, it was caused by a class called Time which conflicted with Time Class that is part of Unity Assembly.
+Fixed players contuing to move after switch.
+Next:
+-Program a range of distance for Abuela so that she cannot go beyond that distance from Cosmos.
+-Create Objects for Hygiene: Soap, Needles, platform puke, platform blood, platform urine, cloud of bodyodor. Blood puke and urine need to lose their properties after collision.
+
+Update_006
+I started a script to detect the distance between Abuela and RangeCenter, it calculates. However my attempts to keep her in that range have failed. She still moves freely.
+Tutorial: https://www.youtube.com/watch?v=OMPV-duv25Q
+This Source was Chinese to me: https://answers.unity.com/questions/1309521/how-to-keep-an-object-within-a-circlesphere-radius.html
+
+Update_007
+I created a HealthBar and script:
+Health is set, I am trying to decrease health on collision, not happening yet
+I setup values for Hygiene and Karma the same as I did for Health, once I get Health to decrease and increase on collision, I will be able to set up the objects which alter these and create bars for them as well.
+Collision Objects are specific objects for now, I will in the future create placeholder spawns which create them according to the SchoolClock. This is not part of the Boss level except for Projectiles which damage Health.
+Students will become projectiles as they enter the boss, being destroyed from the scene, they will be spat by him being created again, on collision they will do damage and be destroyed again.
+
+Update_008
+I redid the HealthBar
+Credits to Link:
+Brackeys
+https://www.youtube.com/watch?v=BLfNP4Sc_iA
+Next Step is to take damage on collision with an object and destroy the object.
+
+***Inbetween Horror Problem***:
+Unity crashed my computer by hogging up memory on my C drive
+I had to reinstall windows from scratch
+https://www.youtube.com/watch?v=ZvmMfChzVSQ&feature=emb_title
+YouTube
+Tenor Games
+How to install Unity Hub and Unity 2018 in another location other than C...
+I had to do this work around to install unity into a different drive bc unity installs to C drive with no other options
+my OS relies on C drive
+operating system*
+I created a mirrored link to another drive to solve this
+
+Update_009
+Something went broke Null Reference Exception. Trying to decrease currentHealth on the healthbar on collision of a "projectile", either by name or by tag, it doesnt want to work.
+
+Update_010
+collider with projectile works, damage works. destroy object works.
+need to change colliders to boxes.
+need to reproduce the HealthBar for HygieneBar and KarmaBar.
+Need to setup a beginners area with objects that will set Hygiene and Karma to 100.
+Need to setup a Chankleta Controller that allows a Chankleta De Dios to be given to the player for each full meter.
+
+Update_011
+HygieneBar and KarmaBar are created and work with their collider objects.
+Karma starts at zero in contrast with the other two meters, object collision fills the meter instead of doing damage to it.
+Needles do damage as well as lower Hygiene.
+next: change colliders to rectangles with matching* meshes (for some reason mesh cube isnt mutable)
+add a chankleta manager for each full meter
+work on two types of projectiles, chankleta and chankleta de dios (super attack)
+
+Update_012
+I used a tutorial from:
+https://www.youtube.com/watch?v=za2Ja52bGK0
+by: Grimoire Hex
+However there are some things different in mine, I have not set the boomerang object to rest in the player's hand...im wondering how to change that area of script...
+Error: No error listed atm, however, When swtiching to Abuela, she just falls to the ground, no longer floats, and no chankleta is made.
+
+Update_013
+the boomerang works, but I want to tweak it so that I can throw two at once.
+I also want to make Abuela non-collidable.
+I also want to continue movement while discontinuing movement commands for Cosmos when LeftShift is being held to switch players.
+
+Update_014
+Added the toggle Menu for position text, save, and load.
+Position and Save Work, however, Load does not because it doesnt work with the built-in PlayerController assembly, the transform position wont over-ride the Controller.
+Im going to continue the lesson and hopefully get into item saving. I need to make key and schedule, both keys to open doors, and make soap to change the hygiene meter. All Items in a class structure.
+
+Update_015
+I now have class ItemObjects, Consumables, Food, and Keys.
+Need to apply functions that set regenHealth and regenHygiene.
+Need to set function on door to swing open if proper key is in inventory.
+Continuing class lecture: https://ubalt.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=a3788024-6896-414d-bd54-aba800f1b128
+@133:08min marker
+problems with Update_014 still pending
+
+Update_016
+Inventory images are not showing up. Things look setup correctly, Pretty sure my code is the same as yours. No error messages, not sure whats going on. Seems to be relatively working in your lecture.
+issues:
+brought in a sprite into 3d
+link @: https://www.youtube.com/watch?v=An6C33uQq7k
+-solved
+HealthBar got an anchor inverted somehow, 
+had to fix that by copying another Bar and sprucing it up
+-solved
+CanvasUI's were changing depending on the screensize
+reset the canvases in the scene to be screenspace, no pixel perfect, adjust to screensize
+-solved
+
+Update_017
+Scriptables pick up, counters are off somewhere. But the UI works pretty good.

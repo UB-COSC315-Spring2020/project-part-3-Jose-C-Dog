@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ac5e7dbfc69518d4ab60052869f2193e, type: 3}
+  m_Name: Schedule
+  m_EditorClassIdentifier: 
+  cost: 4000
+  image: {fileID: 21300000, guid: d6706fbcf7974b74bae2bfa2bebeece4, type: 3}
+  type: 0
+  prefab: {fileID: 9188592734175616505, guid: 2f07886b7b2c44d4d81d347e16a1cdf0, type: 3}
+  description: This Schedule will prove you are in the right class. Use this to open
+    your classroom door.

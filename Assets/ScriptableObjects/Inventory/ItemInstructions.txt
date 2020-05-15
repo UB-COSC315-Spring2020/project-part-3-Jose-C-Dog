@@ -1,0 +1,7 @@
+when creating a new item:
+
+Create a sprite
+add a collider
+
+drag Item script on it
+drag ItemScriptableObjectPrefab on it eg.food
