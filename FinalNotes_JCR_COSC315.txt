@@ -116,6 +116,8 @@ Update_013
 the boomerang works, but I want to tweak it so that I can throw two at once.
 I also want to make Abuela non-collidable.
 I also want to continue movement while discontinuing movement commands for Cosmos when LeftShift is being held to switch players.
+***updated 5/17/2020: forgot to add reference: https://www.youtube.com/watch?v=za2Ja52bGK0 
+Grimoire Hex***
 
 Update_014
 Added the toggle Menu for position text, save, and load.
